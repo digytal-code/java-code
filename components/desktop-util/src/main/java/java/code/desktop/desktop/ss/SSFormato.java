@@ -1,6 +1,6 @@
-package java.code.desktop;
+package java.code.desktop.desktop.ss;
 
-public class Formato {
+public class SSFormato {
 	public static String MOEDA = "#,##0.00";
 	public static String DATA = "dd/MM/yyyy";
 	public static String CPF = "###.###.###-##";

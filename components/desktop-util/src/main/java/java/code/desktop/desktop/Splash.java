@@ -17,7 +17,7 @@ public class Splash extends JFrame {
         logotipo = new JLabel(Imagens.jpg( "splash"));
         getContentPane().add(logotipo, BorderLayout.CENTER);
         logotipo.setBorder(BorderFactory.createEtchedBorder());
-        JLabel lblVersao = new JLabel("Digytal" + " - " + " - Versão: 1.4 - 091021");
+        JLabel lblVersao = new JLabel("Digytal" + " - " + " - Versão: 1.0 - 091021");
         lblVersao.setBorder(BorderFactory.createEtchedBorder());
         lblVersao.setFont(new Font("Tahoma", Font.BOLD, 11));
         lblVersao.setForeground(Color.BLUE);
