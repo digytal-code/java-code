@@ -28,9 +28,9 @@ Dividimos as classes em pacotes de acordo com suas responsabilidades.
 | Classe  | Descrição |
 | ------------- | ------------- |
 | code.jpa.audit.infra.Auditable  | Interface que representa uma entidade auditável
-| code.jpa.audit.infra.AuditConfig  | Classe de configuração para o listener de autditoria de persistência
-| code.jpa.audit.infra.AuditListener  | Classe que contém a lógica de autditoria
-| code.jpa.audit.start.Processamento  | Classe que contém exemplo de persistência de uma classe Cidade e Cliente executada peplo Springboot contendo um `bean` de CommandLineRunner.
+| code.jpa.audit.infra.AuditConfig  | Classe de configuração para o listener de auditoria de persistência
+| code.jpa.audit.infra.AuditListener  | Classe que contém a lógica de auditoria
+| code.jpa.audit.start.Processamento  | Classe que contém exemplo de persistência de uma classe Cidade e Cliente executada pelo Springboot contendo um `bean` de CommandLineRunner.
 
 ### Configuração
 
@@ -46,7 +46,7 @@ Temos a classe entidade `LogDatabase` que representa a tabela de log de alteraç
 
 #### Javers
 
-[Javers](https://javers.org/documentation/getting-started/) é um framework de que utiliza de Java Reflection para para comparar dois objetos e criar uma lista das alterações Changes.
+[Javers](https://javers.org/documentation/getting-started/) é um framework que utiliza de Java Reflection para comparar dois objetos e criar uma lista das alterações Changes.
 
 #### Spring Data Hibernate Event
 
