@@ -3,9 +3,6 @@ package code.jpa.audit.infra;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
 import org.hibernate.event.spi.PreInsertEvent;
 import org.hibernate.event.spi.PreUpdateEvent;
 import org.javers.core.Changes;
@@ -36,7 +33,7 @@ public class AuditListener {
 
 	@HibernateEventListener
 	public void onSave(Object entity, PreInsertEvent event) {
-		System.out.println("Insert:" + entity);
+		System.out.println("Insert: " + entity);
 	}
 	
 	@Value("#{${entitys}}")
@@ -60,8 +57,8 @@ public class AuditListener {
 
 					set(memberName, older, event.getOldState()[index]);
 					set(memberName, actual, event.getState()[index]);
-
 				}
+				
 				compare(older, actual);
 			}
 		} catch (Exception e) {
@@ -69,22 +66,27 @@ public class AuditListener {
 		}
 	}
 
-	private void set(String member, Object objetct, Object value) {
-		PropertyAccessor property = PropertyAccessorFactory.forDirectFieldAccess(objetct);
+	private void set(String member, Object object, Object value) {
+		PropertyAccessor property = PropertyAccessorFactory.forDirectFieldAccess(object);
 		property.setPropertyValue(member, value);
 	}
+
 	private void compare(Auditable older, Auditable actual) {
 		Diff diff = javers.compare(older, actual);
 		Changes changes = diff.getChanges();
-		for (Change c : changes) {
-			ValueChange vc = (ValueChange) c;
+
+		for (Change change : changes) {
+			ValueChange valueChange = (ValueChange) change;
+			
 			LogDatabase log = new LogDatabase();
-			log.setCampo(vc.getPropertyName());
-			log.setValorAnterior(vc.getLeft().toString());
-			log.setValorAtual(vc.getRight().toString());
+			log.setCampo(valueChange.getPropertyName());
+			log.setValorAnterior(valueChange.getLeft().toString());
+			log.setValorAtual(valueChange.getRight().toString());
+			
 			// demais campos de dominio
 			log.setRegistroId(older.getId().toString());
 			log.setTabelaId(entitys.get(older.getClass().getSimpleName().toLowerCase()));
+			
 			logRepository.save(log);
 		}
 	}

@@ -11,74 +11,77 @@ import code.jpa.audit.repository.ClienteRepository;
 
 @Component
 public class Processamento {
+
 	@Autowired
-	private CidadeRepository cidRepository;
+	private CidadeRepository cidadeRepository;
 	
 	@Autowired
-	private ClienteRepository cliRepository;
+	private ClienteRepository clienteRepository;
 	
 	private static final int IBGE = 2211001;
 	
 	public void cargaInicial() {
-		if(!cidRepository.existsById(IBGE)) {
+		if(!cidadeRepository.existsById(IBGE)) {
 			Cidade cidade = new Cidade();
 			cidade.setId(IBGE);
 			cidade.setNome("TERESINA");
-			cidRepository.save(cidade);
+			cidadeRepository.save(cidade);
 			
 			Cliente cliente = new Cliente();
 			cliente.setCpf("123");
 			cliente.setNome("GLEYSON SAMPAIO");
 			cliente.setCidade(cidade);
-			Endereco end = new Endereco();
-			end.setCep(7867456);
-			end.setLogradouro("AV NOSSA SENHORA");
-			cliente.setEndereo(end);
+
+			Endereco endereco = new Endereco();
+			endereco.setCep(7867456);
+			endereco.setLogradouro("AV NOSSA SENHORA");
+			cliente.setEndereco(endereco);
 			
-			cliRepository.save(cliente);
+			clienteRepository.save(cliente);
 			
 			cliente = new Cliente();
 			cliente.setCpf("456");
 			cliente.setNome("MARCOS P SILVA");
 			cliente.setCidade(cidade);
-			end = new Endereco();
-			end.setCep(876786);
-			end.setLogradouro("RUA DAS JAZIRAS");
-			cliente.setEndereo(end);
+
+			endereco = new Endereco();
+			endereco.setCep(876786);
+			endereco.setLogradouro("RUA DAS JAZIRAS");
+			cliente.setEndereco(endereco);
 			
-			cliRepository.save(cliente);
-			
+			clienteRepository.save(cliente);	
 		}
 	}
+
 	public void alteraCidade() {
-		System.out.println("----------ALTERANDO CIDADE----------");
+		System.out.println("---------- ALTERANDO CIDADE ----------");
+		
 		Cidade cidade = new Cidade();
 		cidade.setId(IBGE);
 		cidade.setNome("TERESINA PIAUI");
 		
-		cidRepository.save(cidade);
-		
+		cidadeRepository.save(cidade);
 	}
+
 	public void alteraCliente() throws Exception {
-		System.out.println("----------ALTERANDO CLIENTE----------");
+		System.out.println("---------- ALTERANDO CLIENTE ----------");
 		
-		Cliente dbEntity = cliRepository.findByCpf("123"); 
-		if(dbEntity!=null) {
-			Cliente cli = new Cliente();
-			Endereco end = new Endereco();
-			end.setCep(dbEntity.getEndereo().getCep());
-			end.setCep(988678);
-			end.setLogradouro(dbEntity.getEndereo().getLogradouro());
+		Cliente clienteDoBancoDeDados = clienteRepository.findByCpf("123"); 
+
+		if(clienteDoBancoDeDados != null) {			
+			Endereco endereco = new Endereco();
+			endereco.setCep(clienteDoBancoDeDados.getEndereco().getCep());
+			endereco.setCep(988678);
+			endereco.setLogradouro("RUA JOSE FIRMINO");
 			
-			cli.setEndereo(end);
-			cli.getEndereo().setLogradouro("RUA JOSE FIRMINO");
-			cli.setId(dbEntity.getId());
-			cli.setNome("GLEYSON SAMPAIO DE OLIVEIRA");
-			cli.setCpf(dbEntity.getCpf());
-			cli.setCidade(dbEntity.getCidade());
+			Cliente cliente = new Cliente();
+			cliente.setId(clienteDoBancoDeDados.getId());
+			cliente.setNome("GLEYSON SAMPAIO DE OLIVEIRA");
+			cliente.setCpf(clienteDoBancoDeDados.getCpf());
+			cliente.setCidade(clienteDoBancoDeDados.getCidade());
+			cliente.setEndereco(endereco);
 			
-			cliRepository.save(cli);
-			
+			clienteRepository.save(cliente);
 		}
 	}
 }

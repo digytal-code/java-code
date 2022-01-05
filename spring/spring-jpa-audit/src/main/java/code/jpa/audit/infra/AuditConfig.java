@@ -15,18 +15,23 @@ import io.github.teastman.hibernate.AnnotatedHibernateEventListenerInvoker;
 
 @Configuration
 class AuditConfig {
-	@Autowired
+	
+    @Autowired
 	private EntityManagerFactory entityManagerFactory;
+    
     @Bean
     public AnnotatedHibernateEventListenerInvoker annotatedHibernateEventHandlerInvoker() {
         AnnotatedHibernateEventListenerInvoker invoker = new AnnotatedHibernateEventListenerInvoker();
         SessionFactoryImplementor sessionFactory = entityManagerFactory.unwrap(SessionFactoryImplementor.class);
         EventListenerRegistry registry = sessionFactory.getServiceRegistry().getService(EventListenerRegistry.class);
+
         registry.prependListeners(EventType.PRE_UPDATE, invoker);
         registry.prependListeners(EventType.PRE_DELETE, invoker);
         registry.prependListeners(EventType.PRE_INSERT, invoker);
+        
         return invoker;
     }
+
     @Bean
     public Javers javers() {
     	return JaversBuilder.javers().build();
