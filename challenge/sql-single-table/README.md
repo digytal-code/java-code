@@ -21,7 +21,7 @@ O nosso desafio é criar uma jornada de instruções SQL contemplando comandos D
 
 ##### DML
 
-1. Realizar um insert com 10 registros profissionais;
+1. Realizar um insert com 10 registros profissionais - SEM INFORMAR O VALOR DA COLUNA PROFISSÃO;
 1. Definir as profissões via `update` nos registros inseridos, considerando a alteração individualmente;
 1. Excluir todos os registros que o campo `estrangeiro` for considerado verdadeiro;
 1. O cadastro de Id=3 deverá residir no endereco: Logradouro='PRACA DA SE', Numero = 'S/N', Bairro = 'CENTRO', Cidade = 'SAO PAULO', Estado = 'SP';
