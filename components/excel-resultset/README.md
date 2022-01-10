@@ -12,7 +12,7 @@
 
 #### Finalidade
 - Leitura facilitada de arquivos Excel com base no padrão JDBC
-- 
+
 ## Excel ResultSet
 Projeto com a finalidade de facilitar a leitura de arquivos Excel baseado no padrão JDBC
 
