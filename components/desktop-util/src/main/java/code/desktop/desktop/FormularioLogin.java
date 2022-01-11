@@ -20,7 +20,6 @@ import code.desktop.desktop.ss.SSCabecalho;
 import code.desktop.desktop.ss.SSCaixaCombinacao;
 import code.desktop.desktop.ss.SSCampoSenha;
 import code.desktop.desktop.ss.SSCampoTexto;
-import code.desktop.desktop.ss.SSMensagem;
 
 public class FormularioLogin extends JFrame {
     private JPanel pnlLogin = new JPanel();
@@ -29,7 +28,6 @@ public class FormularioLogin extends JFrame {
     private SSCampoTexto cLogin = new SSCampoTexto();
     private SSCampoSenha cSenha = new SSCampoSenha();
     private SSCaixaCombinacao cEmpresas = new SSCaixaCombinacao();
-    private FormularioSessao sessao;
     public FormularioLogin() {
     	this.setIconImage(Imagens.pngImage("app"));
     	setTitle("LOGIN");

@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.Rectangle;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
@@ -27,6 +26,8 @@ public abstract class MDI extends JFrame {
 
     private JLabel imagemFundo = new JLabel();
     private ImageIcon imgFundo;
+    private FormularioSessao sessao;
+    
     public MDI() {
         areaTrabalho.setBackground(Color.LIGHT_GRAY);
         areaTrabalho.setVisible(true);
@@ -108,21 +109,9 @@ public abstract class MDI extends JFrame {
         imagemFundo.setBounds(top, left - 20, imgFundo.getIconWidth(), imgFundo.getIconHeight());
     }
     
-    public void setLogin(String login) {
-    	cLogin.setText(login);
-    }
-    
-    public void setEmpresa(String empresa) {
-    	cEmpresa.setText(empresa);
-    }
-    
-    public void setConexao(String conexao) {
-    	cConexao.setText(conexao);
-    }
-    
-    public void setAmbiente(String ambiente) {
-    	cAmbiente.setText(ambiente);
-    }
+    public void setSessao(FormularioSessao sessao) {
+		this.sessao = sessao;
+	}
    
     public JDesktopPane getAreaTrabalho() {
         return areaTrabalho;

@@ -11,6 +11,20 @@ public class FormularioSessao {
 	private String cnpj;
 	private Integer idUsuario;
 	private Integer idEmpresa;
+	private String ambiente;
+	private Integer idAmbiente;
+	public String getAmbiente() {
+		return ambiente;
+	}
+	public void setAmbiente(String ambiente) {
+		this.ambiente = ambiente;
+	}
+	public Integer getIdAmbiente() {
+		return idAmbiente;
+	}
+	public void setIdAmbiente(Integer idAmbiente) {
+		this.idAmbiente = idAmbiente;
+	}
 	public LocalDateTime getDataHora() {
 		return dataHora;
 	}
