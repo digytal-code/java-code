@@ -72,7 +72,7 @@ public abstract  class FormularioConsulta extends Formulario {
 	}
 	protected void exibir(FormularioCadastro formulario, TipoOperacao tipoOperacao, Object entidade){
 		formulario.setTipoOperacao(tipoOperacao);
-		formulario.carregar();
+		formulario.preExibir();
 		formulario.setEntidade(entidade);
 		this.exibir(formulario);
 		

@@ -54,8 +54,12 @@ public abstract class Formulario extends JPanel {
 		return cabecalho.getTitulo();
 	}
 	
-	public void carregar() {
+	public void preExibir() {
 
+	}
+	
+	public void posExibir() {
+		
 	}
 	
 	public MDI getMdi() {
@@ -73,6 +77,7 @@ public abstract class Formulario extends JPanel {
 		if (frm != this) {
 			frm.setMdi(this.getMdi());
 		}
+		preExibir();
 		//frm.setLogin(this.getLogin());
 		JInternalFrame internal = new JInternalFrame(getTitulo());
 		internal.setFrameIcon(Imagens.png("app"));
@@ -92,7 +97,8 @@ public abstract class Formulario extends JPanel {
 		//frm.carregar();
 		mdi.getAreaTrabalho().add(internal);
 		mdi.getAreaTrabalho().getDesktopManager().activateFrame(internal);
-		   
+		 
+		posExibir();
 		
 	}
 	public void setTitulo(String titulo) {
@@ -116,8 +122,9 @@ public abstract class Formulario extends JPanel {
 	
 	public static Object dialogo(Formulario form) {
 		respostaDialogo=null;
-		form.carregar();
+		form.preExibir();
 		criarDialogo(form);
+		form.posExibir();
 		return respostaDialogo;
 	}
 	private static void criarDialogo(JPanel form) {

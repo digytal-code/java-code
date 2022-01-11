@@ -133,7 +133,7 @@ public abstract class MDI extends JFrame {
     }
     public void exibir(Formulario formulario) {
 		formulario.setMdi(this);
-		formulario.carregar();
+		formulario.preExibir();
 		formulario.exibir();
 	}
     
