@@ -37,7 +37,7 @@ O nosso desafio é criar uma jornada de instruções SQL contemplando comandos D
 
 ##### Instruções
 
-- Realizem todo o processo em um base de dados, comentando cada etapa de evolução do projeto
+- Realizem todo o processo em uma base de dados, comentando cada etapa de evolução do projeto
 - Para a apresentação do projeto, re-executem em um nova base de dados o arquivo script.sql por etapas
 
 
