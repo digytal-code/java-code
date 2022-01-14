@@ -1,4 +1,4 @@
-package digytal.esocial;
+package com.digytal.open;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
