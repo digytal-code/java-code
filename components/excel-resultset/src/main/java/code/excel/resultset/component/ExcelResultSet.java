@@ -212,7 +212,7 @@ public class ExcelResultSet {
 	
 	
 	/**
-	 * Returna um Date pelo pelo fiel label da coluna
+	 * Retorna um Date pelo field label da coluna
 	 * @param field
 	 * @return
 	 * @throws ParseException
@@ -228,7 +228,7 @@ public class ExcelResultSet {
 			return (Date) date;
 	}
 	/**
-	 * Returna um LocalDate pelo pelo fiel label da coluna
+	 * Retorna um LocalDate pelo field label da coluna
 	 * @param field
 	 * @return
 	 * @throws ParseException
@@ -249,7 +249,7 @@ public class ExcelResultSet {
 		}
 	}
 	/**
-	 * Returna um LocalDateTime pelo pelo fiel label da coluna
+	 * Retorna um LocalDateTime pelo field label da coluna
 	 * @param field
 	 * @return
 	 * @throws ParseException
@@ -270,7 +270,7 @@ public class ExcelResultSet {
 		}
 	}
 	/**
-	 * Returna um Boolean pelo pelo fiel label da coluna e a expressão que determina o valor true
+	 * Retorna um Boolean pelo field label da coluna e a expressão que determina o valor true
 	 * @param field
 	 * @return
 	 * @throws ParseException
@@ -286,7 +286,7 @@ public class ExcelResultSet {
 		return value.toString().equals(trueValue) ? true : false;
 	}
 	/**
-	 * Returna um BigDecimal pelo pelo fiel label da coluna
+	 * Retorna um BigDecimal pelo field label da coluna
 	 * @param field
 	 * @return
 	 * @throws ParseException
@@ -299,7 +299,7 @@ public class ExcelResultSet {
 		return new BigDecimal(value);
 	}
 	/**
-	 * Returna um Double pelo pelo fiel label da coluna
+	 * Retorna um Double pelo field label da coluna
 	 * @param field
 	 * @return
 	 * @throws ParseException
@@ -321,7 +321,7 @@ public class ExcelResultSet {
 		}
 	}
 	/**
-	 * Returna uma String pelo pelo fiel label da coluna
+	 * Retorna uma String pelo field label da coluna
 	 * @param field
 	 * @return
 	 * @throws ParseException
@@ -336,7 +336,7 @@ public class ExcelResultSet {
 			return value.toString();
 	}
 	/**
-	 * Returna um Integer pelo pelo fiel label da coluna
+	 * Retorna um Integer pelo field label da coluna
 	 * @param field
 	 * @return
 	 * @throws ParseException
@@ -353,7 +353,7 @@ public class ExcelResultSet {
 		return value == null || value.toString().isEmpty();
 	}
 	/**
-	 * Returna um Generic pelo pelo fiel label da coluna
+	 * Retorna um Generic pelo field label da coluna
 	 * @param field
 	 * @return
 	 * @throws ParseException
