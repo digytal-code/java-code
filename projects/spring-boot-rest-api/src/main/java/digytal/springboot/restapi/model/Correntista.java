@@ -1,7 +1,6 @@
 package digytal.springboot.restapi.model;
 
-import java.time.LocalDate;
-
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +15,15 @@ public class Correntista {
     private Integer id;
     private String cpf;
     private String nome;
+    @Embedded
+    private Conta conta;
+    
+    public Conta getConta() {
+		return conta;
+	}
+    public void setConta(Conta conta) {
+		this.conta = conta;
+	}
     public Integer getId() {
         return id;
     }

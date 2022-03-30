@@ -1,26 +1,15 @@
 package digytal.springboot.restapi.model;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "tab_conta")
+import javax.persistence.Embeddable;
+@Embeddable
 public class Conta {
-    @Id
+    @Column(name = "conta_numero")
     private Long numero;
+    
+    @Column(name = "conta_saldo")
     private Double saldo;
-    @Column(name = "id_correntista")
-    private Integer idCorrentista;
-
-    public Integer getIdCorrentista() {
-        return idCorrentista;
-    }
-    public void setIdCorrentista(Integer idCorrentista) {
-        this.idCorrentista = idCorrentista;
-    }
-
+    
     public Long getNumero() {
         return numero;
     }
