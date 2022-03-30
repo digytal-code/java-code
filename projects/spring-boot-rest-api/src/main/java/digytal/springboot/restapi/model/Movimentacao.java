@@ -17,7 +17,8 @@ public class Movimentacao {
     private Integer id;
     @Column(name = "data_hora")
     private LocalDateTime dataHora;
-    private Conta conta;
+    @Column(name = "id_conta")
+    private Integer idConta;
     private String descricao;
     private Double valor;
     private TipoMovimentacao tipo;
@@ -31,12 +32,12 @@ public class Movimentacao {
     public void setDataHora(LocalDateTime dataHora) {
         this.dataHora = dataHora;
     }
-    public Conta getConta() {
-        return conta;
-    }
-    public void setConta(Conta conta) {
-        this.conta = conta;
-    }
+   public Integer getIdConta() {
+	return idConta;
+}
+   public void setIdConta(Integer idConta) {
+	this.idConta = idConta;
+}
     public String getDescricao() {
         return descricao;
     }
