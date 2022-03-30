@@ -10,6 +10,14 @@ public class Conta {
     @Id
     private Long numero;
     private Double saldo;
+    private Integer idCorrentista;
+
+    public Integer getIdCorrentista() {
+        return idCorrentista;
+    }
+    public void setIdCorrentista(Integer idCorrentista) {
+        this.idCorrentista = idCorrentista;
+    }
 
     public Long getNumero() {
         return numero;
