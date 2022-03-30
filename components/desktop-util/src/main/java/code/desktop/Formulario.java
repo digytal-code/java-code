@@ -226,4 +226,7 @@ public abstract class Formulario extends JPanel {
 	public static void main(String[] args) {
 		gbc("cContaDestino",0,7);
 	}
+	public void setConteudoLayout(LayoutManager laytout) {
+		this.getConteudo().setLayout(laytout);
+	}
 }

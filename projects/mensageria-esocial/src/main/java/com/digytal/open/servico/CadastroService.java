@@ -2,9 +2,9 @@ package com.digytal.open.servico;
 
 import java.util.List;
 
-import com.digytal.open.modelo.entidade.comum.EntidadeCadastro;
-import com.digytal.open.modelo.entidade.comum.EntidadeCertificado;
-import com.digytal.open.modelo.entidade.comum.EntidadeEmpresa;
+import digytal.azapy.model.entidade.comum.EntidadeCadastro;
+import digytal.azapy.model.entidade.comum.EntidadeCertificado;
+import digytal.azapy.model.entidade.comum.EntidadeEmpresa;
 
 public interface CadastroService {
 	void incluir(EntidadeCadastro entidade);

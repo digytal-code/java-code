@@ -112,7 +112,9 @@ public abstract class MDI extends JFrame {
     public void setSessao(FormularioSessao sessao) {
 		this.sessao = sessao;
 	}
-   
+    public void exibir() {
+    	setVisible(true);
+    }
     public JDesktopPane getAreaTrabalho() {
         return areaTrabalho;
     }

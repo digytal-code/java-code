@@ -3,7 +3,7 @@ package com.digytal.open.util;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.digytal.open.modelo.enums.esocial.TipoEvento;
+import digytal.azapy.model.enums.esocial.TipoEvento;
 
 public class ESocialUtil {
 	

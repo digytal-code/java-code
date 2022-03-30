@@ -3,12 +3,13 @@ package com.digytal.open.servico.esocial;
 import java.util.Date;
 import java.util.List;
 
-import com.digytal.open.modelo.Credencial;
-import com.digytal.open.modelo.entidade.esocial.EntidadeEvento;
-import com.digytal.open.modelo.entidade.esocial.EntidadeLote;
-import com.digytal.open.modelo.entidade.esocial.EntidadeRemessa;
-import com.digytal.open.modelo.enums.esocial.TipoEvento;
 import com.digytal.open.util.model.embedded.Estabelecimento;
+
+import digytal.azapy.model.Credencial;
+import digytal.azapy.model.entidade.esocial.EntidadeEvento;
+import digytal.azapy.model.entidade.esocial.EntidadeLote;
+import digytal.azapy.model.entidade.esocial.EntidadeRemessa;
+import digytal.azapy.model.enums.esocial.TipoEvento;
 
 public interface RemessaService {
 	void gerarRemessa(Estabelecimento estabelecimento, String nome,TipoEvento tipo, String xml) throws Exception;
