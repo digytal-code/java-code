@@ -1,8 +1,6 @@
 package digytal.springboot.restapi.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,8 +8,6 @@ import javax.persistence.Table;
 @Table(name = "tab_conta")
 public class Conta {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
     private Long numero;
     private Double saldo;
 
@@ -31,7 +27,4 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public Integer getId() {
-        return id;
-    }
 }
