@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,8 +28,13 @@ public class CorrentistaController {
     public void gravar(@RequestBody NovoCorrentista correntista){
         service.gravar(correntista);
     }
-    @GetMapping
-    public List<Correntista> listarTodos(){
+    @GetMapping("/{nome}")
+    public List<Correntista> listarCorrentistas(@PathVariable("nome") String nome){
+    		nome = nome.toUpperCase();
+    		return repository.findByNomeContaining(nome);
+    }
+    @GetMapping()
+    public List<Correntista> listarCorrentistas(){
     	return repository.findAll();
     }
 }

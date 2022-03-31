@@ -24,7 +24,7 @@ public class CorrentistaService {
         
         //aqui poderia ter frameworks de conversao automatica
         Correntista correntista = new Correntista();
-        correntista.setNome(novoCorrentista.getNome());
+        correntista.setNome(novoCorrentista.getNome().toUpperCase());
         correntista.setCpf(novoCorrentista.getCpf());
         correntista.setConta(conta);
         
